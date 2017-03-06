@@ -38,7 +38,7 @@ pushd "$ROOT/../src/Build/Bin" || bail
 
 	pushd $LIB_FOLDER || bail
 
-		CPPFLAGS="-I$PREFIX/include" LDFLAGS="-L$PREFIX/lib" PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig $ROOT/$LIB_FOLDER/configure --prefix=$PREFIX --host=$TARGET --enable-ps=no --enable-pdf=no --enable-interpreter=no --enable-xlib=no || bail
+		CPPFLAGS="-I$PREFIX/include" LDFLAGS="-L$PREFIX/lib" PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig $ROOT/$LIB_FOLDER/configure --prefix=$PREFIX --host=$TARGET --enable-ps=no --enable-pdf=no --enable-interpreter=no --disable-xlib --disable-xcb --disable-fontconfig || bail
 		cp "$PATCHFILES/cairo-Makefile" test/Makefile || bail
 		cp "$PATCHFILES/cairo-Makefile" perf/Makefile || bail
 		echo -e "\n\n#define CAIRO_NO_MUTEX 1" >> config.h || bail

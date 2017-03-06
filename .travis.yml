@@ -19,7 +19,7 @@ addons:
     - flex
     - bison
     - nasm
-    - zlib-dev
+    - libz-dev
     - genisoimage
     - libgmp-dev
     - libmpc-dev
